@@ -1,4 +1,4 @@
-package com.bantunes.hotel;
+package com.bantunes82.hotel;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Entity;

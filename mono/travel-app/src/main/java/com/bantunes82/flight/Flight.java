@@ -1,4 +1,4 @@
-package flight;
+package  com.bantunes82.flight;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Entity;

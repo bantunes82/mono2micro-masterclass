@@ -1,4 +1,4 @@
-package com.bantunes.hotel;
+package com.bantunes82.flight;
 
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
@@ -6,32 +6,31 @@ import jakarta.ws.rs.core.MediaType;
 
 import java.util.List;
 
-@Path("hotel")
-public class HotelResources {
+@Path("flight")
+public class FlightResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Hotel> hotels(){
-        return Hotel.listAll();
+    public List<Flight> flights(){
+        return Flight.listAll();
     }
-
 
     @GET
     @Path("findById")
     @Produces(MediaType.APPLICATION_JSON)
-    public Hotel findById(@QueryParam("id") long id){
-        return Hotel.findById(id);
+    public Flight findById(@QueryParam("id") long id){
+        return Flight.findById(id);
     }
 
     @Transactional
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Hotel newHotel(Hotel hotel){
-        hotel.id = null;
-        hotel.persist();
+    public Flight newFlight(Flight flight){
+        flight.id=null;
+        flight.persist();
 
-        return hotel;
+        return flight;
     }
 
 }

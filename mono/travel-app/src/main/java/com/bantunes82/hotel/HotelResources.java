@@ -1,37 +1,37 @@
-package flight;
+package com.bantunes82.hotel;
 
-import flight.Flight;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
 import java.util.List;
 
-@Path("flight")
-public class FlightResource {
+@Path("hotel")
+public class HotelResources {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Flight> flights(){
-        return Flight.listAll();
+    public List<Hotel> hotels(){
+        return Hotel.listAll();
     }
+
 
     @GET
     @Path("findById")
     @Produces(MediaType.APPLICATION_JSON)
-    public Flight findById(@QueryParam("id") long id){
-        return Flight.findById(id);
+    public Hotel findById(@QueryParam("id") long id){
+        return Hotel.findById(id);
     }
 
     @Transactional
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Flight newFlight(Flight flight){
-        flight.id=null;
-        flight.persist();
+    public Hotel newHotel(Hotel hotel){
+        hotel.id = null;
+        hotel.persist();
 
-        return flight;
+        return hotel;
     }
 
 }
