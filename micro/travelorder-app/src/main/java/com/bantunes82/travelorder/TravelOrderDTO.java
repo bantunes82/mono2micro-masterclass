@@ -1,7 +1,5 @@
 package com.bantunes82.travelorder;
 
-import com.bantunes82.flight.Flight;
-import com.bantunes82.hotel.Hotel;
 
 public class TravelOrderDTO {
 
@@ -26,7 +24,8 @@ public class TravelOrderDTO {
         if(hotel == null){
             hotel = new Hotel();
         }
-        return new TravelOrderDTO(flight.fromAirport, flight.toAirport, hotel.nights);
+
+        return new TravelOrderDTO(flight.getFromAirport(), flight.getToAirport(), hotel.getNights());
     }
 
     public static TravelOrderDTO of(String fromAirport, String toAirport, Integer nights){
