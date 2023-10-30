@@ -25,7 +25,7 @@ public class FlightResource {
     @GET
     @Path("findByTravelOrderId")
     @Produces(MediaType.APPLICATION_JSON)
-    public Flight findByTravelOrderId(@QueryParam("travelOrderId") long travelOrderId){
+    public Flight findByTravelOrderId(@QueryParam("travelOrderId") long travelOrderId) {
         return Flight.findByTravelOrderId(travelOrderId);
     }
 
