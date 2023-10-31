@@ -10,7 +10,7 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import java.time.temporal.ChronoUnit;
 
 
-@RegisterRestClient(baseUri = "http://localhost:8081/flight")
+@RegisterRestClient(baseUri = "http://flight-app-bantunes82-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/flight")
 public interface FlightService {
 
     @GET
